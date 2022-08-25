@@ -1,0 +1,35 @@
+:root {
+    --color-primary:#7FB77E;
+    --color-secondary:#B1D7B4;
+    --color-text: #F7F6DC;
+    --font-main:Quicksand-regular;
+    --font-text:Quicksand-bold;
+}
+/* Main settings */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-text);
+    color: var(--color-text);
+}
+@font-face{
+    font-family: Quicksand-regular;
+    src: url(../fonts/Quicksand-Regular.ttf);
+}
+
+@font-face{
+    font-family: Quicksand-bold;
+    src: url(../fonts/Quicksand_Bold.otf);
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: vas(--font-main);
+}
+/* End Main settings */
+
+/* Layout settings */
+
+
+/* End Layout settings */
