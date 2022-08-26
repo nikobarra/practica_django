@@ -12,8 +12,8 @@
 - Desarrolle los modelos a utilizar en cada app
 - Se agregaron los forms utilizando ModelForms para generar los formularios en base a los modelos
 - creacion del html base para luego heredarlo en otras paginas!
-* el html base esta formado por dintintos bloques algunos aun sin usar pero se dejaron preparados por si se necesita incluir mas funcionalidades, como por ejemplo algun script.
-* por otro lado el nav se realizo separado del html base para ser incluido en ese.
+1-  el html base esta formado por dintintos bloques algunos aun sin usar pero se dejaron preparados por si se necesita incluir mas funcionalidades, como por ejemplo algun script.
+2-  por otro lado el nav se realizo separado del html base para ser incluido en ese.
 - creacion del resto de los html para cada app
 - estructuracion de carpetas
 - creacion del css base para las paginas
