@@ -16,7 +16,11 @@
 2-  por otro lado el nav se realizo separado del html base para ser incluido en ese.
 - creacion del resto de los html para cada app
 - estructuracion de carpetas
-- creacion del css base para las paginas
+- creacion del css base para las apps
+- template de visualizacion de datos
+- template de modificacion
+- template de creacion
+- template de eliminacion
 
 
 

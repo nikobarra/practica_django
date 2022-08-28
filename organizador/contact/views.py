@@ -19,10 +19,24 @@ def view(request, id):
 
 
 def edit(request, id):
-    if request.method == 'GET':
-        contact = Contact.objects.get(id=id)
+
+    contact = Contact.objects.get(id=id)
+    if (request.method == 'GET'):
         form = ContactForm(instance=contact)
         context = {
             'form': form,
+            'id': id
         }
-    return render(request,'contact/create.html', context)
+        return render(request,'contact/create.html', context)
+
+    if (request.method == 'POST'):
+        form = ContactForm(request.POST, instance=contact)
+        if form.is_valid():
+            form.save()
+            return render(request,'contact/detail.html', {'contact': contact})
+        else:
+            context = {
+                'form': form,
+                'id': id
+            }
+            return render(request,'contact/create.html', context)
