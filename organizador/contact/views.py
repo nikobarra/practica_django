@@ -1,4 +1,5 @@
-from django.shortcuts import render
+
+from django.shortcuts import render, redirect
 from .models import Contact
 from .forms import ContactForm
 
@@ -27,10 +28,11 @@ def edit(request, id):
             'form': form,
             'id': id
         }
-        return render(request,'contact/create.html', context)
+        return render(request,'contact/edit.html', context)
 
     if (request.method == 'POST'):
         form = ContactForm(request.POST, instance=contact)
+        #instace se usa para llenar el form con los datos del objeto
         if form.is_valid():
             form.save()
             return render(request,'contact/detail.html', {'contact': contact})
@@ -39,4 +41,18 @@ def edit(request, id):
                 'form': form,
                 'id': id
             }
-            return render(request,'contact/create.html', context)
+            return render(request,'contact/detail.html', context)
+
+def create (request):
+    if (request.method == 'GET'):
+        form = ContactForm()
+        context = {
+            'form': form
+        }
+        return render(request,'contact/create.html', context)
+
+    if (request.method == 'POST'):
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('contact')
