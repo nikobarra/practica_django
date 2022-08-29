@@ -1,0 +1,17 @@
+{% extends 'layout/base.html' %}
+{% block 'title' %} Tareas {{ todo.title }} {% endblock %}
+
+{% block 'content' %}
+
+<span class="btn-aux" >
+    <a href= "{% url 'todo' %}"> Volver </a>
+</span>
+
+<ul class="list">
+        <li><b>Titulo: </b> {{ todo.title }} </li>  
+        <li><b>Descripcion: </b> {{ todo.description }} </li>  
+        <li><b>Fecha de creacion: </b> {{ todo.created_at }} </li>    
+        <li><b>Fecha de actualizacion: </b> {{ todo.updated_at }} </li>    
+        <li><b>Prioridad: </b> {{ todo.priority }} </li>  
+</ul>
+{% endblock %}

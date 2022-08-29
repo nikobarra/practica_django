@@ -5,8 +5,8 @@ class Todo(models.Model):
     description = models.TextField(blank=True, null=True)
     completed = models.BooleanField(default=False)
     priority = models.IntegerField(default = 3)
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateField(auto_now_add=True)
+    updated_at = models.DateField(auto_now=True)
 
     def __str__(self):
         return self.title
