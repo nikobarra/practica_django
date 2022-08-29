@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Todo
+from .forms import TodoForm
 
 
 def index (request):
@@ -18,12 +19,39 @@ def view (request, id):
     return render(request,'todo/detail.html', context)
 
 def edit (request, id):
-    return render(request,'todo/index.html', {})
+    todo = Todo.objects.get(id=id)
+    if request.method =='GET':
+        form = TodoForm(instance=todo)
+        context={
+            'form': form,
+            'id': id,
+        }
+        return render(request,'todo/edit.html', context)
+        
+    if request.method =='POST':
+        form = TodoForm(request.POST, instance=todo)
+        if form.is_valid():
+            form.save()
+            return redirect('todo')
+
 
 def add (request):
-    return render(request,'todo/index.html', {})
+    if request.method == 'GET':
+        form = TodoForm()
+        context={
+            'form': form,
+        }
+        return render(request,'todo/create.html', context)
+    if request.method =='POST':
+        form = TodoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('todo')
 
+    
 def delete (request, id):
-    return render(request,'todo/index.html', {})
+    todo = Todo.objects.get(id=id)
+    todo.delete()
+    return redirect('todo')
 
 

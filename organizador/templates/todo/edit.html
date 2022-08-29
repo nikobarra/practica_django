@@ -1,6 +1,6 @@
 
 {% extends 'layout/base.html' %}
-{% block 'title' %} Creac Tarea {% endblock %}
+{% block 'title' %} Editar tarea {% endblock %}
 
 {% block 'styles' %}
 {% load static %}
@@ -9,7 +9,7 @@
 
 {% block 'content' %}
 
-<form action ='{% url 'todo_add' %}' method="POST" >
+<form action ='{% url 'todo_edit' id=id %}' method="POST" >
     {% csrf_token %}
     <table>
     {{ form.as_table }}

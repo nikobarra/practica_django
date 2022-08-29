@@ -6,7 +6,7 @@ class Todo(models.Model):
     completed = models.BooleanField(default=False)
     priority = models.IntegerField(default = 3)
     created_at = models.DateField(auto_now_add=True)
-    updated_at = models.DateField(auto_now=True)
+    updated_at = models.DateField(null=True, blank=True)
 
     def __str__(self):
         return self.title
