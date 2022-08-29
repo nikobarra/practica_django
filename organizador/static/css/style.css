@@ -156,3 +156,29 @@ main {
     text-decoration: none;
 }
 /* End Layout settings */
+
+/*index*/
+.cards{
+display: flex;
+justify-content: space-around;
+}
+
+.card {
+width: 300px;
+height: 300px;
+border-radius: 10px;
+display: flex;
+justify-content: center;
+align-items: center;
+color: white;
+margin: 20px;
+text-decoration: none;
+font-size:2rem;
+background-color: var(--color-primary);
+
+}
+
+.card:hover {
+    background-color: var(--color-text);
+}
+/*end index*/

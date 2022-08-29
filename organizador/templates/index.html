@@ -4,4 +4,9 @@
 
 {% block 'content' %}
 <h1> Bienvenido a tu organizador personal. </h1>
+
+<div class='cards'>
+        <a href='{% url 'contact'  %}' class='card'>Agenda </a>
+        <a href='{% url 'todo'  %}' class='card'> Tareas </a>
+</div>
 {% endblock  %}
