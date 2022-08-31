@@ -3,8 +3,11 @@ from django.shortcuts import render, redirect
 from .models import Contact
 from .forms import ContactForm
 
-def index(request):
-    contacts = Contact.objects.filter(name__contains=request.GET.get('search', ''))
+def index(request, letter = None):
+    if letter != None:
+        contacts = Contact.objects.filter(name__istartswith=letter)  
+    else:
+        contacts = Contact.objects.filter(name__contains=request.GET.get('search', ''))
     context = {
         'contacts': contacts
         }

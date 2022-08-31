@@ -8,10 +8,9 @@
 
 
 {% block 'content' %}
-<form class='search' action=" {% url 'contact' %} " method= 'GET'>
-    <input type='text' name="search" class = 'search-bar' placeholder="Buscar...">
-    <input type='submit' value='Buscar' class='btn btn-search'>
-</form>
+
+{% include 'contact/partials/search.html' %}
+{% include 'contact/partials/by_initial.html' %}
 
 <span class="btn-aux" >
     <a href= "{% url 'contact' %}"> Ver todos </a>
